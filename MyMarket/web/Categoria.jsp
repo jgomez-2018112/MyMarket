@@ -37,7 +37,7 @@
                            <tr>
                             <td>${categoria.getCodigoCategoria()}</td> 
                             <td>${categoria.getNombreCategoria()}</td>                        
-                            <td> <a class="btn btn-warning"href=href="Controlador?menu=Categoria&accion=Editar&codigoCategoria=${categoria.getCodigoCategoria()}">Editar <a> </td>
+                            <td> <a class="btn btn-warning"href="Controlador?menu=Categoria&accion=Editar&codigoCategoria=${categoria.getCodigoCategoria()}">Editar <a> </td>
                             <td> <a class="btn btn-danger"href="Controlador?menu=Categoria&accion=Eliminar&codigoCategoria=${categoria.getCodigoCategoria()}">Eliminar <a> </td>
                            </tr> 
                           </c:forEach>

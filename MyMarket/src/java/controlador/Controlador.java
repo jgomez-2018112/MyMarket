@@ -21,6 +21,8 @@ import modelo.*;
 public class Controlador extends HttpServlet {
     Empleado empleado = new  Empleado();
     EmpleadoDAO empleadoDAO = new EmpleadoDAO();
+     Categoria categoria = new  Categoria();
+    CategoriaDAO categoriaDAO = new CategoriaDAO();
     
     int codEmpleado;
     
@@ -104,9 +106,16 @@ public class Controlador extends HttpServlet {
                     break;
             }
             request.getRequestDispatcher("Empleado.jsp").forward(request, response);
-        } 
+        } else if (menu.equals("Categoria")) {
+            switch (accion) {
+                case "Listar":
+                    List listaCategoria = categoriaDAO.listar();
+                    request.setAttribute("categoria", listaCategoria);
+                    break;
+            }
+            request.getRequestDispatcher("Categoria.jsp").forward(request, response);
     }
-
+    }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

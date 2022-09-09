@@ -15,7 +15,7 @@
                     
                         <div class="form-group">
                             <label>Nombre Categoria</label>
-                            <input type="text" value="" name="txtNombreCategoria"class="form-control">
+                            <input type="text" value="${categorias.getNombreCategoria()}" name="txtNombreCategoria"class="form-control">
                             </div>
                     
                          
@@ -37,8 +37,8 @@
                            <tr>
                             <td>${categoria.getCodigoCategoria()}</td> 
                             <td>${categoria.getNombreCategoria()}</td>                        
-                            <td> <a class="btn btn-warning"href="">Editar <a> </td>
-                            <td> <a class="btn btn-danger"href="">Eliminar <a> </td>
+                            <td> <a class="btn btn-warning"href=href="Controlador?menu=Categoria&accion=Editar&codigoCategoria=${categoria.getCodigoCategoria()}">Editar <a> </td>
+                            <td> <a class="btn btn-danger"href="Controlador?menu=Categoria&accion=Eliminar&codigoCategoria=${categoria.getCodigoCategoria()}">Eliminar <a> </td>
                            </tr> 
                           </c:forEach>
                        </tbody>

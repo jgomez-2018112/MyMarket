@@ -85,16 +85,16 @@ public class CategoriaDAO {
 //                 return resp;
 //                 
 //                 }
-//         public void eliminar(int id){
-//             String sql="delete from Empleado where codigoEmpleado = "+id;
-//             try{
-//                 con=cn.Conexion();
-//                 ps=con.prepareStatement(sql);
-//                 ps.executeUpdate();
-//             }catch(Exception e){
-//                 e.printStackTrace();
-//             }
-//         }
+         public void eliminar(int id){
+             String sql="delete from Categorias where codigoCategoria = "+id;
+             try{
+                 con=cn.Conexion();
+                 ps=con.prepareStatement(sql);
+                 ps.executeUpdate();
+             }catch(Exception e){
+                 e.printStackTrace();
+             }
+         }
 }
   
 

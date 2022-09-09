@@ -230,4 +230,3 @@ insert into Categorias(nombreCategoria)
          insert into DetalleFactura(codigoFactura,cantidad,codigoProducto)
 		values(2,5,5);
         
-        

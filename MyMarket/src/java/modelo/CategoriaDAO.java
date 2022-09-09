@@ -12,6 +12,7 @@ public class CategoriaDAO {
     Connection con;
     PreparedStatement ps;
     ResultSet rs;
+    int resp;
   
   
  
@@ -34,6 +35,66 @@ public class CategoriaDAO {
                    
                    return listaCategoria;
                }
+       public int agregar(Categoria cat){
+            String sql ="Insert into Categorias(nombreCategoria) values (?)";
+            try{
+                con=cn.Conexion();
+                ps=con.prepareStatement(sql);
+                ps.setString(1,cat.getNombreCategoria());
+                ps.executeUpdate();
+            }catch (Exception e){
+                e.printStackTrace();
+                System.out.println("No se pudo agregar el registro");
+            }
+            
+                return resp;
+        }   
+        
+         public Categoria listarCodigoCategoria(int id){
+                Categoria cat = new Categoria();
+                String sql = "Select * From Categorias Where codigoCategoria= "+id;
+                try {
+                        con = cn.Conexion();
+                        ps = con.prepareStatement(sql);
+                        rs = ps.executeQuery();
+                        while(rs.next()){
+                            cat.setNombreCategoria(rs.getString(2));
+                          
+                        }
+                }catch(Exception e){
+                    e.printStackTrace();
+                }
+                
+             return cat;
+         }
+//         public int actualizar(Empleado emp){
+//         String sql = "update categoria set DPIEmpleado = ?,nombresEmpleado=?,telefonoEmpleado=?,estado=?,usuario=? where codigoEmpleado=?";
+//            try{
+//                 con=cn.Conexion();
+//                ps=con.prepareStatement(sql);
+//                ps.setString(1,emp.getDPIEmpleado());
+//                ps.setString(2, emp.getNombresEmpleado());
+//                ps.setString(3, emp.getTelefonoEmpleado());
+//                ps.setString(4, emp.getEstado());
+//                ps.setString(5, emp.getUsuario());
+//                ps.setInt(6, emp.getCodigoEmpleado());
+//                ps.executeUpdate();
+//            }catch(Exception e){
+//                e.printStackTrace();
+//                }
+//                 return resp;
+//                 
+//                 }
+//         public void eliminar(int id){
+//             String sql="delete from Empleado where codigoEmpleado = "+id;
+//             try{
+//                 con=cn.Conexion();
+//                 ps=con.prepareStatement(sql);
+//                 ps.executeUpdate();
+//             }catch(Exception e){
+//                 e.printStackTrace();
+//             }
+//         }
 }
   
 

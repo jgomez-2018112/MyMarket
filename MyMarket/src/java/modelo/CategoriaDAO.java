@@ -67,24 +67,20 @@ public class CategoriaDAO {
                 
              return cat;
          }
-//         public int actualizar(Empleado emp){
-//         String sql = "update categoria set DPIEmpleado = ?,nombresEmpleado=?,telefonoEmpleado=?,estado=?,usuario=? where codigoEmpleado=?";
-//            try{
-//                 con=cn.Conexion();
-//                ps=con.prepareStatement(sql);
-//                ps.setString(1,emp.getDPIEmpleado());
-//                ps.setString(2, emp.getNombresEmpleado());
-//                ps.setString(3, emp.getTelefonoEmpleado());
-//                ps.setString(4, emp.getEstado());
-//                ps.setString(5, emp.getUsuario());
-//                ps.setInt(6, emp.getCodigoEmpleado());
-//                ps.executeUpdate();
-//            }catch(Exception e){
-//                e.printStackTrace();
-//                }
-//                 return resp;
-//                 
-//                 }
+         public int actualizar(Categoria cat){
+         String sql = "update categoria set nombreCategoria = ? where codigoCategoria=?";
+            try{
+                 con=cn.Conexion();
+                ps=con.prepareStatement(sql);
+                ps.setString(1,cat.getNombreCategoria());            
+                ps.setInt(2, cat.getCodigoCategoria());
+                ps.executeUpdate();
+            }catch(Exception e){
+                e.printStackTrace();
+                }
+                 return resp;
+                 
+                 }
          public void eliminar(int id){
              String sql="delete from Categorias where codigoCategoria = "+id;
              try{

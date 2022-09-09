@@ -123,7 +123,7 @@ public class Controlador extends HttpServlet {
                     codCategoria = Integer.parseInt(request.getParameter("codigoCategoria"));
                     Categoria c = categoriaDAO.listarCodigoCategoria(codCategoria);
                     request.setAttribute("categorias", c);
-                    request.getRequestDispatcher("Controlador?menu=Empleado&accion=Listar").forward(request, response);
+                    request.getRequestDispatcher("Controlador?menu=Categoria&accion=Listar").forward(request, response);
                     break;
 //                case "Actualizar":
 //                    String DPIEmp = request.getParameter("txtDPIEmpleado");

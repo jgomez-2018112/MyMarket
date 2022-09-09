@@ -126,8 +126,8 @@ public class Controlador extends HttpServlet {
                     request.getRequestDispatcher("Controlador?menu=Categoria&accion=Listar").forward(request, response);
                     break;
                 case "Actualizar":
-                    String nombrecat = request.getParameter("txtNombrecategoria");     
-                    categoria.setNombreCategoria(nombrecat);    
+                    String nombreCat=request.getParameter("txtNombreCategoria");     
+                    categoria.setNombreCategoria(nombreCat);
                     categoria.setCodigoCategoria(codCategoria);
                     categoriaDAO.actualizar(categoria);
                     request.getRequestDispatcher("Controlador?menu=Categoria&accion=Listar").forward(request, response);
@@ -137,11 +137,7 @@ public class Controlador extends HttpServlet {
                     categoriaDAO.eliminar(codCategoria);
                     request.getRequestDispatcher("Controlador?menu=Categoria&accion=Listar").forward(request, response);
                     break;
-            }
-            
-            
-            
-            request.getRequestDispatcher("Categoria.jsp").forward(request, response);
+            }request.getRequestDispatcher("Categoria.jsp").forward(request, response);
     }
     }
     

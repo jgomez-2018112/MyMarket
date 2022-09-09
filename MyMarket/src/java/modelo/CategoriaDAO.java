@@ -68,7 +68,7 @@ public class CategoriaDAO {
              return cat;
          }
          public int actualizar(Categoria cat){
-         String sql = "update categoria set nombreCategoria = ? where codigoCategoria=?";
+         String sql = "update categorias set nombreCategoria = ? where codigoCategoria=?";
             try{
                  con=cn.Conexion();
                 ps=con.prepareStatement(sql);

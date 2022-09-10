@@ -15,7 +15,7 @@
     </head>
     <body>
         <div class="d-flex">
-            <div class="card col-sm-4">
+            <div class="card col-sm-3">
                 <div class="card-body">
                     <form action="Controlador?menu=Cargo" method="POST">
                         <div class="form-gruop">
@@ -26,12 +26,13 @@
                             <label>Descripcion: </label>
                             <Input type="text" value="${cargo.getDescripcionCargo()}" name="txtDescripcion" class="form-control">
                         </div>
+                        <br>
                         <input type="submit" name="accion" value="Agregar" class="btn btn-info">
                         <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
                     </form>
                 </div>
             </div>
-            <div class="col-sm-5">
+            <div class="col-sm-8">
                 <table class="table table-hover">
                     <thead>
                         <tr>

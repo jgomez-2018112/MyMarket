@@ -15,7 +15,7 @@
     </head>
     <body>
         <div class="d-flex">
-            <div class="card col-sm-4">
+            <div class="card col-sm-3">
                 <div class="card-body">
                     <form class="" action="Controlador?menu=Cliente" method="POST">
                         <div class="form-group">

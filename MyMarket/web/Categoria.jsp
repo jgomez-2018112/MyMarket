@@ -16,11 +16,11 @@
                         <div class="form-group">
                             <label>Nombre Categoria</label>
                             <input type="text" value="${categorias.getNombreCategoria()}" name="txtNombreCategoria"class="form-control">
-                            </div>
+                        </div>
                     
                          
                      <input type="submit" name="accion" value="Agregar" class="btn btn-info">
-                            <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
+                     <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
                     </form> 
                 </div>
             </div>
@@ -29,7 +29,8 @@
                       <thead>
                           <tr>
                               <td>CODIGO CATEGORIA</td>
-                              <td>NOMBRE</td>                         
+                              <td>NOMBRE</td>   
+                              <td>Acciones</td> 
                       </tr>
                        </thead>   
                        <tbody>
@@ -37,8 +38,10 @@
                            <tr>
                             <td>${categoria.getCodigoCategoria()}</td> 
                             <td>${categoria.getNombreCategoria()}</td>                        
-                            <td> <a class="btn btn-warning"href="Controlador?menu=Categoria&accion=Editar&codigoCategoria=${categoria.getCodigoCategoria()}">Editar </a> </td>
-                            <td> <a class="btn btn-danger"href="Controlador?menu=Categoria&accion=Eliminar&codigoCategoria=${categoria.getCodigoCategoria()}">Eliminar </a> </td>
+                            <td> 
+                                <a class="btn btn-warning"href="Controlador?menu=Categoria&accion=Editar&codigoCategoria=${categoria.getCodigoCategoria()}">Editar </a> 
+                                <a class="btn btn-danger"href="Controlador?menu=Categoria&accion=Eliminar&codigoCategoria=${categoria.getCodigoCategoria()}">Eliminar </a>
+                            </td>
                            </tr> 
                           </c:forEach>
                        </tbody>

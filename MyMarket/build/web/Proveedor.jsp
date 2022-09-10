@@ -44,6 +44,7 @@
                             <td>Nombre</td>
                             <td>Direccion</td>
                             <td>Telefono</td>
+                            <td>Acciones</td>
                         </tr> 
                     </thead>
                     <tbody>

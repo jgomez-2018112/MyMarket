@@ -55,8 +55,10 @@
                             <td>${proveedor.getNombreProveedor()}</td>
                             <td>${proveedor.getDireccionProveedor()}</td>
                             <td>${proveedor.getTelefonoProveedor()}</td>
-                            <td><a class="btn btn-warning" href="Controlador?menu=Proveedor&accion=Editar&codigoProveedor=${proveedor.getCodigoProveedor()}">Editar</a></td>
-                            <td> <a class="btn btn-danger" href="Controlador?menu=Proveedor&accion=Eliminar&codigoProveedor=${proveedor.getCodigoProveedor()}">Eliminar</a></td>
+                            <td>
+                                <a class="btn btn-warning" href="Controlador?menu=Proveedor&accion=Editar&codigoProveedor=${proveedor.getCodigoProveedor()}">Editar</a>
+                                <a class="btn btn-danger" href="Controlador?menu=Proveedor&accion=Eliminar&codigoProveedor=${proveedor.getCodigoProveedor()}">Eliminar</a>
+                            </td>
                         </tr>
                         </c:forEach>
                     </tbody>

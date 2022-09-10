@@ -27,7 +27,10 @@ public class Controlador extends HttpServlet {
     ProveedorDAO proveedorDAO = new ProveedorDAO();
     Cliente cliente = new Cliente();
     ClienteDAO clienteDAO = new ClienteDAO();
+    Cargo cargo = new Cargo();
+    CargoDAO cargoDAO = new CargoDAO();
     
+    int codCargo;
     int codEmpleado;
     int codCategoria;
     int codProveedor;
@@ -229,6 +232,42 @@ public class Controlador extends HttpServlet {
                         break;
                 }
                 request.getRequestDispatcher("Cliente.jsp").forward(request, response);
+        }else if(menu.equalsIgnoreCase("Cargo")){
+            switch(accion){
+                case "Listar":
+                    List listaCargo = cargoDAO.listar();
+                    request.setAttribute("cargos", listaCargo);
+                    break;
+                case "Agregar":
+                    String nombre = request.getParameter("txtNombreCargo");
+                    String descripcion = request.getParameter("txtDescripcion");
+                    cargo.setNombreCargo(nombre);
+                    cargo.setDescripcionCargo(descripcion);
+                    cargoDAO.agregar(cargo);
+                    request.getRequestDispatcher("Controlador?menu=Cargo&accion=Listar").forward(request, response);
+                    break;
+                case "Editar":
+                    codCargo = Integer.parseInt(request.getParameter("codigoCargo"));
+                    Cargo c = cargoDAO.listarCodigoCargo(codCargo);
+                    request.setAttribute("cargo", c);
+                    request.getRequestDispatcher("Controlador?menu=Cargo&accion=Listar").forward(request, response);
+                    break;
+                case "Actualizar":
+                    String nombreCa = request.getParameter("txtNombreCargo");
+                    String descripcionCa = request.getParameter("txtDescripcion");
+                    cargo.setNombreCargo(nombreCa);
+                    cargo.setDescripcionCargo(descripcionCa);
+                    cargo.setCodigoCargo(codCargo);
+                    cargoDAO.actualizar(cargo);
+                    request.getRequestDispatcher("Controlador?menu=Cargo&accion=Listar").forward(request, response);
+                    break;
+                case "Eliminar":
+                    codCargo = Integer.parseInt(request.getParameter("codigoCargo"));
+                    cargoDAO.eliminar(codCargo);
+                    request.getRequestDispatcher("Controlador?menu=Cargo&accion=Listar").forward(request, response);
+                    break;
+            }
+            request.getRequestDispatcher("Cargo.jsp").forward(request, response);
         }
     }
     

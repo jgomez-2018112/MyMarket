@@ -16,7 +16,7 @@
     </head>
     <body>
         <div class="d-flex">
-            <div class="card col-em-3">
+            <div class="card col-sm-3">
                 <div class="card-body">
                     <form action="Controlador?menu=Proveedor" method="POST">
                         <div class="form-gruop">
@@ -36,7 +36,7 @@
                     </form>
                 </div>
             </div>
-            <div class="col-em-8">
+            <div class="col-sm-8">
                 <table class="table table-hover">
                     <thead>
                         <tr>

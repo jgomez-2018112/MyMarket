@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Raleway:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Open+Sans:wght@700&family=Raleway:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+html{
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
+}
+
+.header{
+    height: 150px;
+    border-radius: .3em;
+    background-color: #0000000c;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1)
+}
+
+.welcome{
+    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    padding-top: 50px;
+    padding-left: 20px;
+    font-size: 80px;
+    font-weight: 900;
+    color: #004d86;
+}
+
+.header-text{
+    text-align: center;
+    font-weight: 900;
+}
+
+.container{
+    padding: 3em;
+    padding-bottom: 2em;
+    display: grid;
+    grid-gap: 2em;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding-top: 1rem;
+
+}
+
+.quote{
+    padding: 2em;
+    padding-left: 1em;
+    border-radius: .3em;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1)   
+}
+
+.quote.clock{
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+
+.container-center{
+    padding: 0;
+    display: grid;
+    grid-gap: 2em;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.block-center{
+    padding: 2em;
+    border-radius: .3em;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);   
+    height: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../img/bg.jpg);
+}
+
+.blue-box{
+    background-color: #004d86;
+    color: white;
+}
+
+.blue-box img{
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+}
+
+.blue-box-emp{
+        background-color: #004d86;
+        color: white;
+}
+
+span{
+    font-weight: bolder;
+    font-size: 25px;
+    position: relative;
+    margin-top: 1vh;
+    margin-left: 15px;
+}
+
+
+
+p{
+    font-size: 20px;
+    margin-top: 0;
+}
+
+.user-span{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.fecha{
+    font-size: 10px;
+}
+
+.hora{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 150px;
+    margin-bottom: 3rem;
+}
+
+.minutos{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 80px;
+    font-weight: 500;
+}
+
+.dia-estilo{
+    font-weight: bolder;
+    font-size: 30px;
+    position: relative;
+    margin-top: 5vh;
+    margin-left: 30px;
+}
+
+.list{
+    padding: 5px;
+    list-style: none;
+}
+
+.button-67 {
+    align-items: center;
+    background: #ffffff;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: -10px -10px 30px 0 #fff,10px 10px 30px 0 #1d0dca17;
+    box-sizing: border-box;
+    color: #2a1f62;
+    cursor: pointer;
+    display: flex;
+    font-family: "Cascadia Code",Consolas,Monaco,"Andale Mono","Ubuntu Mono",monospace;
+    font-size: 1rem;
+    justify-content: center;
+    line-height: 1.5rem;
+    padding: 10px;
+    position: relative;
+    text-align: left;
+    transition: .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: pre;
+    width: 98%;
+    height: 10px;
+    word-break: normal;
+    word-spacing: normal;
+  }
+  
+  .button-67:hover {
+    background: #f8f8ff;
+    box-shadow: -15px -15px 30px 0 #fff, 15px 15px 30px 0 #1d0dca17;
+  }
+
+  .button-67 img {
+    padding: 1em;
+  }
+
+ .EmpleadosBox {
+    color: #ffffff;
+    position: relative;
+    outline: none;
+    text-decoration: none;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 40px;
+    width: 98%;
+    opacity: 1;
+    background-color: #003863;
+    border: 1px solid rgba(22, 76, 167, 0.6);
+  }
+
+  .EmpleadosBox span {
+    color: #164ca7;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.7px;
+  }
+  .EmpleadosBox:hover {
+    animation: rotate 0.7s ease-in-out both;
+  }
+  .EmpleadosBox:hover span {
+    animation: storm 0.7s ease-in-out both;
+    animation-delay: 0.06s;
+  }
+
+  .EmpleadosBox img {
+    margin-right: 1em;
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+    25% {
+      transform: rotate(3deg) translate3d(0, 0, 0);
+    }
+    50% {
+      transform: rotate(-3deg) translate3d(0, 0, 0);
+    }
+    75% {
+      transform: rotate(1deg) translate3d(0, 0, 0);
+    }
+    100% {
+      transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+  }
+  @keyframes storm {
+    0% {
+      transform: translate3d(0, 0, 0) translateZ(0);
+    }
+    25% {
+      transform: translate3d(4px, 0, 0) translateZ(0);
+    }
+    50% {
+      transform: translate3d(-3px, 0, 0) translateZ(0);
+    }
+    75% {
+      transform: translate3d(2px, 0, 0) translateZ(0);
+    }
+    100% {
+      transform: translate3d(0, 0, 0) translateZ(0);
+    }
+  }
+  
+@media(max-width:1845px){
+    .minutos{
+        font-size: 70px;
+    }
+}
+
+@media(max-width:1750px){
+    .dia-estilo{
+        font-size: 25px;
+    }
+    .hora{
+        font-size: 130px;
+    }
+}
+
+@media(max-width:1660px){
+    .hora{
+        font-size: 100px;
+    }
+    .minutos{
+        font-size: 60px;
+    }
+}
+
+@media(max-width:1657px){
+    .hora{
+        font-size: 60px;
+    }
+    .minutos{
+        font-size: 40px;
+    }
+}
+
+@media(max-width:1555px){
+    .dia-estilo{
+        font-size: 20px;
+    }
+    .hora{
+        font-size: 40px;
+    }
+    .minutos{
+        font-size: 40px;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .button-67 {
+      padding: 24px;
+    }
+}
+
+@media (max-width: 960px) {
+    .welcome{
+        font-size: 60px;
+        font-weight: bold;
+    }
+}
+
+
+@media (max-width: 734px) {
+    .welcome{
+        font-size: 50px;
+        font-weight: bold;
+    }
+}
+
+@media (max-width: 630px) {
+    .welcome{
+        text-align: center;
+        padding-top: 30px;
+    }
+
+}
+
+@media (min-width: 550px){
+    .span-2{
+        grid-column: auto / span 2;
+    }
+}
+
+
+@media (max-width: 430px) {
+    .welcome{
+        font-size: 40px;
+        text-align: center;
+        padding-top: 20px;
+    }
+
+}
+
+@media (max-width: 325px) {
+    .welcome{
+        font-size: 30px;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    .header{
+        height: 100px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+

@@ -19,10 +19,15 @@ body {
 
 .main{
     width: 100%;
-    transition: opacity 2s ease-in;
+    transition: opacity 0.5s ease-in;
     opacity: 0;
     display: none;
 }
+
+.main.show{
+  opacity: 1;
+}
+
 nav {
   position: fixed;
   top: 0;
@@ -124,19 +129,25 @@ nav.open ~ .overlay {
   padding-left: 30px;
 }
 
+
 .appFrame{
   padding-top: 70px;
-    width: 117rem;
+  width: 100%;
+  height: 61.1rem;
+  
 }
 
+.appFrame.open{
+  margin-left: 15%;
+}
+
+
 .mainApp{
+  top: 0;
   height: 98%;
   width: 98%;
-  margin-top: 1rem;
   margin-left: 1.5rem;
   border: none;
-    background-color: #004D86;
-
 }
 
 
@@ -157,11 +168,10 @@ nav.open ~ .overlay {
   cursor: pointer;
   display: flex;
   align-items: center;
-  background: red;
+  background: rgb(255, 0, 0);
   border: none;
   border-radius: 5px;
-  box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
-  background: #e62222;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.651);
  }
  
  .btnlogout, .btnlogout span {
@@ -215,7 +225,7 @@ nav.open ~ .overlay {
  .btnUser {
   display: inline-block;
   border-radius: 4px;
-  background-color: #004D86;
+  background-color: #004d86;
   background-image: url(../img/userW.png);
   background-repeat: no-repeat;
   background-position: center;
@@ -228,6 +238,8 @@ nav.open ~ .overlay {
   height: 50px;
   transition: all 50ms;
   cursor: pointer;
+
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.651);
  }
  
  .btnUser span {
@@ -288,6 +300,13 @@ nav.open ~ .overlay {
     animation: prixClipFix 2s linear infinite ;
 }
 
+.home-screen{
+  background-color: black;
+  height: 100vh;
+}
+
+
+
 @keyframes rotate {
     100%   {transform: rotate(360deg)}
 }
@@ -295,49 +314,129 @@ nav.open ~ .overlay {
 @keyframes prixClipFix {
     0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
     25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
-    50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+    50%  {clip-path:polygon(50% 50%,0 0,100% 0,100%s 100%,100% 100%,100% 100%)}
     75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
     100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
 }
 
-@media (max-width: 1726px) {
+@media (max-height: 881px) {
+  .list .nav-link {
+    margin: 3px 0;
+    transition: 100ms;
+  }
+}
+
+@media (max-height: 825px) {
+  .list .nav-link {
+    margin: 0;
+    padding: 14px 12px;
+    transition: 100ms;
+  }
+}
+
+@media (max-height: 786px) {
+  .list .nav-link {
+    padding: 13px 12px;
+    transition: 100ms;
+  }
+}
+
+@media (max-height: 764px) {
+  .list .nav-link {
+    padding: 8px 12px;
+    transition: 100ms;
+  }
+}
+
+@media (max-height: 660px) {
+  .list .nav-link {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    padding: 8px;
+    width: 40px;
+    transition: 100ms;
+    
+  }
+  .link{
+    opacity: 0;
+  }
+}
+
+
+@media (max-width: 1800px) {
     .btn-user{
         padding-left: 65vw;
         transition: 200ms;
     }
+    .appFrame.open{
+      margin-left: 18%;
+      transition: 100ms;
+    }
 }
 
-@media (max-width: 1491px) {
+@media (max-width: 1500px) {
     .btn-user{
         padding-left: 60vw;
         transition: 200ms;
     }
+    .appFrame.open{
+      margin-left: 23%;
+      transition: 100ms;
+    }
 }
 
-@media (max-width: 1298px) {
+@media (max-width: 1300px) {
     .btn-user{
         padding-left: 50vw;
         transition: 200ms;
     }
+    .appFrame.open{
+      margin-left: 26%;
+      transition: 100ms;
+    }
 }
 
-@media (max-width: 1038px) {
+@media (max-width: 1150px) {
     .btn-user{
         padding-left: 40vw;
         transition: 200ms;
     }
-}
 
-@media (max-width: 859px) {
-    .btn-user{
-        padding-left: 30vw;
-        transition: 200ms;
+    .appFrame.open{
+      margin-left: 29%;
+      transition: 100ms;
     }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 1034px) {
     .btn-user{
-        padding-left: 30px;
+        padding-left: 39vw;
+        transition: 200ms;
+    }
+    
+    .appFrame.open{
+      margin-left: 33%;
+      transition: 100ms;
+    }
+}
+
+
+@media (max-width: 900px) {
+  .btn-user{
+      padding-left: 39vw;
+      transition: 200ms;
+  }
+
+  .appFrame.open{
+    margin-left: 36%;
+    transition: 100ms;
+  }
+}
+
+@media (max-width: 850px) {
+    .btn-user{
+        padding-left: 60%;
         width: 50px;
         transition: 200ms;
     }
@@ -348,7 +447,70 @@ nav.open ~ .overlay {
     .responsive-form{
         visibility: visible;
     }
+
+    .appFrame.open{
+      margin-left: 39%;
+      transition: 100ms;
+    }
 }
+
+@media (max-width: 750px) {
+  .btn-user{
+      padding-left: 40%;
+      width: 50px;
+      transition: 200ms;
+  }
+
+
+  .appFrame.open{
+    margin-left: 41%;
+    transition: 100ms;
+  }
+}
+
+
+@media (max-width: 700px) {
+  .btn-user{
+      padding-left: 40%;
+      width: 50px;
+      transition: 200ms;
+  }
+
+  .appFrame.open{
+    margin-left: 47%;
+    transition: 100ms;
+  }
+
+}
+
+
+@media (max-width: 650px) {
+
+  .appFrame.open{
+    transition: all 1s ease-in-out;
+    opacity: 0;
+  }
+
+}
+
+
+@media (max-width: 562px) {
+  .btn-user{
+    padding-left: 10%;
+    width: 10px;
+    transition: 200ms;
+  }
+
+  .logo .logo-name {
+    font-size: 15px;
+    font-weight: 500;
+
+  }
+}
+
+
+
+
 
 
 

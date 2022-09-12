@@ -26,7 +26,7 @@
 <nav>
     <div class="logo">
         <i class="bx bx-menu menu-icon"></i>
-        <img src="./img/Logo.png" alt="" width="70px">
+        <img src="img/Logo.png" alt="" width="70px">
         <span class="logo-name">My Market</span>
         <div class="btn-user">
             <div class="dropdown">
@@ -69,7 +69,7 @@
             <div class="sidebar-content">
                 <ul class="lists">
                     <li class="list">
-                        <a href="#" class="nav-link">
+                        <a href="HomeScreen.jsp" target="myFrame" class="nav-link">
                             <i class="bx bx-home-alt icon"></i>
                             <span class="link">Home</span>
                         </a>
@@ -82,7 +82,7 @@
                     </li>
                     <li class="list">
                         <a href="Controlador?menu=Empleado&accion=Listar" target="myFrame" class="nav-link">
-                            <i class="bx icon"><img src="./img/customer.png" alt="" width="20px"></i>
+                            <i class="bx icon"><img src="./img/employee.png" alt="" width="20px"></i>
                             <span class="link">Empleados</span>
                         </a>
                     </li>
@@ -139,11 +139,9 @@
             </div>
         </div>
 </nav>
-<div class="appFrame main" style="height: 57rem; ">
-    <iframe class="mainApp" name="myFrame"> </iframe>
+<div class="appFrame main">
+    <iframe src="HomeScreen.jsp" class="mainApp" name="myFrame">  </iframe>
 </div>
-
-
 <section class="overlay"></section>
 
 <script src="js/principalApp.js"></script>

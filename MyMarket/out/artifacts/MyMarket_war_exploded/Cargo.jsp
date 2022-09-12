@@ -1,6 +1,6 @@
 <%-- 
     Document   : Cargo
-    Created on : 3/09/2022, 08:15:30 AM
+    Created on : 9/09/2022, 09:36:16 PM
     Author     : damia
 --%>
 
@@ -20,11 +20,11 @@
                     <form action="Controlador?menu=Cargo" method="POST">
                         <div class="form-gruop">
                             <label>Nombre: </label>
-                            <Input type="text" name="txtNombreCargo" class="form-control">
+                            <Input type="text" value="${cargo.getNombreCargo()}" name="txtNombreCargo" class="form-control">
                         </div>
                         <div class="form-gruop">
                             <label>Descripcion: </label>
-                            <Input type="text" name="txtDescripcion" class="form-control">
+                            <Input type="text" value="${cargo.getDescripcionCargo()}" name="txtDescripcion" class="form-control">
                         </div>
                         <br>
                         <input type="submit" name="accion" value="Agregar" class="btn btn-info">
@@ -39,7 +39,7 @@
                             <td>CODIGO</td>
                             <td>NOMBRE</td>
                             <td>DESCRIPCION</td>
-
+                            <td>ACCIONES</td>
                         </tr> 
                     </thead>
                     <tbody>
@@ -49,8 +49,8 @@
                             <td>${cargos.getNombreCargo()}</td>
                             <td>${cargos.getDescripcionCargo()}</td>
                             <td>
-                                <a class="btn btn-warning" href="">Editar</a>
-                                <a class="btn btn-danger" href="">Eliminar</a>
+                                <a class="btn btn-warning" href="Controlador?menu=Cargo&accion=Editar&codigoCargo=${cargos.getCodigoCargo()}">Editar</a>
+                                <a class="btn btn-danger" href="Controlador?menu=Cargo&accion=Eliminar&codigoCargo=${cargos.getCodigoCargo()}">Eliminar</a>
                             </td>
                         </tr>
                         </c:forEach>

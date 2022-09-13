@@ -132,12 +132,6 @@
                             <span class="link">Factura</span>
                         </a>
                     </li>
-                    <li class="list">
-                        <a href="Controlador?menu=DetalleFactura&accion=Listar" target="myFrame" class="nav-link">
-                            <i class="bx icon"><img src="./img/detallebill.png" alt="" width="20px"></i>
-                            <span class="link">Detalle de Facturas</span>
-                        </a>
-                    </li>
                 </ul>
 
             </div>

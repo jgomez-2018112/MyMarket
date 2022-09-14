@@ -75,13 +75,12 @@ public class OfertaDAO {
     
     
     public int actualizar(Oferta of){
-        String sql = "update ofertas set porcentajeDescuento = ?, codigoProducto = ? where codigoOferta = ?";
+        String sql = "update ofertas set porcentajeDescuento = ? where codigoOferta = ?";
         try{
             con = cn.Conexion();
             ps = con.prepareStatement(sql);
             ps.setInt(1, of.getPorcentajeDescuento());
-            ps.setInt(2, of.getCodigoProducto());
-            ps.setInt(3, of.getCodigoOferta());
+            ps.setInt(2, of.getCodigoOferta());
             ps.executeUpdate();
         }catch(Exception e){
             e.printStackTrace();

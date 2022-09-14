@@ -7,12 +7,19 @@ var getHminutos = document.getElementById("minutosBlock");
 var fecha = new Date();
 var year = fecha.getFullYear();
 
+var diaN = fecha.getDate()
+
+console.log(diaN);
+
 const semana = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
 const mes = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
 var mesActual = mes[fecha.getMonth()];
 var horaDia = fecha.getHours();
 
+
+console.log(mes);
+console.log(mesActual);
 
 function getText(obj) {
     return obj.textContent ? obj.textContent : obj.innerText;
@@ -35,7 +42,7 @@ function initWelcome() {
         hi.innerHTML = "<h1 class='welcome'>" + "Hola! " + "</h1>";
     }
 
-    getFecha.innerHTML = "<span class='dia-estilo'>" + year + " de " + mesActual + "<span>";
+    getFecha.innerHTML = "<span class='dia-estilo'>" + diaN + " de " + mesActual + " " + year + "<span>";
 
 }
 
@@ -51,6 +58,7 @@ function Clock() {
     getHreloj.innerText = horaActual;
     getHminutos.innerHTML = "|" + minutoActual;
     var intId = setTimeout(Clock, interval);
+
 }
 
 Clock();

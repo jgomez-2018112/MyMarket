@@ -34,6 +34,9 @@ public class Controlador extends HttpServlet {
     OfertaDAO ofertaDAO = new OfertaDAO();
     Pedido pedido = new Pedido();
     PedidoDAO pedidoDAO = new PedidoDAO();
+    Factura factura = new Factura();
+    FacturaDAO facturaDAO = new FacturaDAO();
+    DetalleFactura detalleFactura = new DetalleFactura();
 
     int codCargo;
     int codEmpleado;
@@ -217,7 +220,7 @@ public class Controlador extends HttpServlet {
                     String telefonoCliente = request.getParameter("txtTelefonoCliente");
                     cliente.setTelefonoCliente(telefonoCliente);
                     clienteDAO.agregar(cliente);
-                    request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
+                    request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);                    
                     break;
                 case "Editar":
                     codCliente = Integer.parseInt(request.getParameter("dpiCliente"));
@@ -415,12 +418,44 @@ public class Controlador extends HttpServlet {
                     codPedido = Integer.parseInt(request.getParameter("codigoPedido"));
                     pedidoDAO.eliminar(codPedido);
                     request.getRequestDispatcher("Controlador?menu=Pedido&accion=Listar").forward(request, response);
-
                     break;
-
             }
             request.getRequestDispatcher("Pedido.jsp").forward(request, response);
-
+        }else if(menu.equals("Facura")){
+            switch(accion){
+                case "Listar":
+                    List facturas = facturaDAO.listar();
+                    request.setAttribute("clientes", facturas);
+                    List facturasP = facturaDAO.listarP();
+                    request.setAttribute("productos", facturasP);
+                    break;
+                case "Buscar":
+                    int dpiCliente = Integer.parseInt(request.getParameter("txtDpiCliente"));
+                    Cliente c = facturaDAO.listarCodigoCliente(dpiCliente);
+                    request.setAttribute("cliente", c);
+                    break;  
+                case "BuscarP":
+                    int codigoProducto = Integer.parseInt(request.getParameter("txtCodigoProducto"));
+                    Producto p = facturaDAO.listarCodigoProducto(codigoProducto);
+                    request.setAttribute("producto", p);
+                    break;
+                /*
+                    case "Agregar":
+                    String nombresCliente = request.getParameter("txtNombresCliente");
+                    String apellidosCliente = request.getParameter("txtApellidosCliente");
+                    String nombres = request.getParameter("txtCodigoProducto");
+                    Double precio = Double.parseDouble(request.getParameter("txtCodigoProducto"));
+                    int stock = Integer.parseInt(request.getParameter("txtCodigoProducto"));
+                    int cantidad = Integer.parseInt(request.getParameter("txtCantidad"));
+                    String  fecha = request.getParameter("txtFechaFactura");   
+                    cliente.setNombresCliente(nombresCliente);
+                    cliente.setApellidosCliente(apellidosCliente);
+                    detalleFactura.setCantidad(cantidad);
+                    factura.setFechaFactura(fecha);
+                    facturaDAO.agregar(factura);
+                    break;
+                */
+            }request.getRequestDispatcher("Facura.jsp").forward(request, response);
         }
 
     }

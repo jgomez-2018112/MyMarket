@@ -37,7 +37,7 @@
                 </div>
             </div>
             <div class="col-sm-8">
-                <table class="table table-hover">
+                <table class="table table-dark">
                     <thead>
                         <tr>
                             <td>CODIGO</td>
@@ -56,7 +56,7 @@
                             <td>${proveedor.getDireccionProveedor()}</td>
                             <td>${proveedor.getTelefonoProveedor()}</td>
                             <td>
-                                <a class="btn btn-warning" href="Controlador?menu=Proveedor&accion=Editar&codigoProveedor=${proveedor.getCodigoProveedor()}">Editar</a>
+                                <a class="btn btn-primary" href="Controlador?menu=Proveedor&accion=Editar&codigoProveedor=${proveedor.getCodigoProveedor()}">Editar</a>
                                 <a class="btn btn-danger" href="Controlador?menu=Proveedor&accion=Eliminar&codigoProveedor=${proveedor.getCodigoProveedor()}">Eliminar</a>
                             </td>
                         </tr>

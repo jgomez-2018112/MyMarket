@@ -30,7 +30,7 @@
                 src="./img/employee.png" alt="" width="20px">Empleados</a></li>
         <li class="list"><a class="button-67" href="Controlador?menu=Producto&accion=Listar" target="myFrame"><img
                 src="./img/product.png" alt="" width="20px">Productos</a></li>
-        <li class="list"><a class="button-67" href="Controlador?menu=Factura&accion=Listar" target="myFrame"><img
+        <li class="list"><a class="button-67" href="Controlador?menu=Facura&accion=Listar" target="myFrame"><img
                 src="./img/bill.png" alt="" width="20px">Factura</a></li>
         <li class="list"><a class="button-67" href="Controlador?menu=Pedido&accion=Listar" target="myFrame"><img
                 src="./img/pedidos.png" alt="" width="20px">Pedidos</a></li>

@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="col-sm-8">
-                <table class="table table-hover">
+                <table class="table table-dark">
                     <thead>
                         <tr>
                             <td>CODIGO</td>
@@ -54,7 +54,7 @@
                             <td>${oferta.getPorcentajeDescuento()}</td>
                             <td>${oferta.getCodigoProducto()}</td>
                             <td>
-                                <a class="btn btn-warning" href="Controlador?menu=Oferta&accion=Editar&codigoOferta=${oferta.getCodigoOferta()}">Editar</a>
+                                <a class="btn btn-primary" href="Controlador?menu=Oferta&accion=Editar&codigoOferta=${oferta.getCodigoOferta()}">Editar</a>
                                 <a class="btn btn-danger" href="Controlador?menu=Oferta&accion=Eliminar&codigoOferta=${oferta.getCodigoOferta()}">Eliminar</a>
                             </td>
                         </tr>

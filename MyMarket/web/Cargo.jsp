@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div class="col-sm-8">
-                <table class="table table-hover">
+                <table class="table table-dark">
                     <thead>
                         <tr>
                             <td>CODIGO</td>
@@ -49,7 +49,7 @@
                             <td>${cargos.getNombreCargo()}</td>
                             <td>${cargos.getDescripcionCargo()}</td>
                             <td>
-                                <a class="btn btn-warning" href="Controlador?menu=Cargo&accion=Editar&codigoCargo=${cargos.getCodigoCargo()}">Editar</a>
+                                <a class="btn btn-primary href="Controlador?menu=Cargo&accion=Editar&codigoCargo=${cargos.getCodigoCargo()}">Editar</a>
                                 <a class="btn btn-danger" href="Controlador?menu=Cargo&accion=Eliminar&codigoCargo=${cargos.getCodigoCargo()}">Eliminar</a>
                             </td>
                         </tr>

@@ -25,7 +25,7 @@
                 </div>
             </div>
             <div class="col-sm-8">
-                <table class="table table-hover">  
+                <table class="table table-dark">
                       <thead>
                           <tr>
                               <td>CODIGO CATEGORIA</td>
@@ -39,7 +39,7 @@
                             <td>${categoria.getCodigoCategoria()}</td> 
                             <td>${categoria.getNombreCategoria()}</td>                        
                             <td> 
-                                <a class="btn btn-warning"href="Controlador?menu=Categoria&accion=Editar&codigoCategoria=${categoria.getCodigoCategoria()}">Editar </a> 
+                                <a class="btn btn-primary"href="Controlador?menu=Categoria&accion=Editar&codigoCategoria=${categoria.getCodigoCategoria()}">Editar </a>
                                 <a class="btn btn-danger"href="Controlador?menu=Categoria&accion=Eliminar&codigoCategoria=${categoria.getCodigoCategoria()}">Eliminar </a>
                             </td>
                            </tr> 

@@ -1,10 +1,10 @@
 <%--
   Created by IntelliJ IDEA.
-  User: latenightt2
   Date: 9/12/22
   Time: 9:42 PM
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,56 +19,57 @@
 </head>
 <body>
 <div class="mainForm-cont d-flex">
-    <div class="form-box col-sm-3">
-        <div class="buscar-form">
+    <div class="form-box col-sm-3">        
+        <form var="cliente" class="buscar-form" action="Controlador?menu=Facura" method="POST">
             <div class="form-entradas buscar-entry">
-                <input type="text" id="" class="form__input" autocomplete="off" placeholder=" ">
+                <input type="text" name="txtDpiCliente" id="" class="form__input" value="${cliente.getDpiCliente()}" autocomplete="off" placeholder=" ">
                 <label class="form__label">DPI</label>
             </div>
             <div class="btn-form">
-                <button type="submit" class="button-17" role="button"><img src="img/buscarWhite.png" width="22px">
+                <button type="submit" class="button-17" name="accion" value="Buscar" role="button"><img src="img/buscarWhite.png" width="22px">
                 </button>
             </div>
             <div class="form-entradas  form-result">
-                <input disabled type="text" id="" class="form__input" autocomplete="off" placeholder="Cliente">
+                <input disabled type="text" name="Cliente" id="" value="${cliente.getNombresCliente()} ${cliente.getApellidosCliente()}" class="form__input" autocomplete="off" placeholder="Cliente">
             </div>
-        </div>
+        </form>
 
-        <div class="buscar-form">
+        <form var="producto" class="buscar-form" action="Controlador?menu=Facura" method="POST">                  
             <div class="form-entradas  buscar-entry">
-                <input type="text" id="" class="form__input" autocomplete="off" placeholder=" ">
+                <input type="text" name="txtCodigoProducto" id="" class="form__input" value="${producto.getCodigoProducto()}" autocomplete="off" placeholder=" ">
                 <label class="form__label">ID</label>
             </div>
             <div class="btn-form">
-                <button type="submit" class="button-17" role="button"><img src="img/buscarWhite.png" width="22px">
+                <button type="submit" class="button-17" name="accion" value="BuscarP" role="button"><img src="img/buscarWhite.png" width="22px">
                 </button>
             </div>
             <div class="form-entradas  form-result">
-                <input disabled type="text" id="" class="form__input" autocomplete="off" placeholder="Producto">
-            </div>
-        </div>
-
+                <input disabled type="text"  name="Producto" id="" value="${producto.getNombreProducto()}" class="form__input" autocomplete="off" placeholder="Producto">
+            </div>            
+        </form>
         <div class="form-entradas  form-result">
-            <input disabled type="text" id="" class="form__input" autocomplete="off" placeholder="Precio">
+            <input disabled type="text" name="Producto" id="" value="${producto.getPrecioProducto()}" class="form__input" autocomplete="off" placeholder="Precio">
         </div>
         <div class="form-entradas  form-result">
-            <input disabled type="text" id="" class="form__input" autocomplete="off" placeholder="Stock">
+            <input disabled type="text" name="Producto" id="" value="${producto.getStock()}" class="form__input" autocomplete="off" placeholder="Stock">
         </div>
+            
+        
         <div class="entradas-bottom">
             <div class="form-entradas cantidad">
-                <input type="text" id="" class="form__input" autocomplete="off" placeholder=" ">
+                <input type="text" id="" value="${detalleFactura.getCantidad()}" name="txtCantidad" class="form__input" autocomplete="off" placeholder=" ">
                 <label class="form__label">Cantidad</label>
             </div>
 
             <div class="form-entradas fechas">
-                <input type="text" id="" class="form__input" autocomplete="off" placeholder="">
+                <input type="date" id="" value="${factura.getFechaFactura()}" name="txtFechaFactura" class="form__input" autocomplete="off" placeholder="">
                 <label class="form__label">Fecha</label>
             </div>
         </div>
 
         <div class="btns-box center-btns">
-            <button type="submit" class="button-6" role="button">Agregar</button>
-            <button type="submit" class="button-6" role="button">Actualizar</button>
+            <button type="submit" name="accion" value="Agregar" class="button-6" role="button">Agregar</button>
+            <button type="submit" name="accion" value="Actualizar" class="button-6" role="button">Actualizar</button>
         </div>
     </div>
 
@@ -86,28 +87,29 @@
             </tr>
             </thead>
             <tbody>
-
-            <tr>
-                <td>codigo</td>
-                <td>fecha</td>
-                <td>cliente</td>
-                <td>producto</td>
-                <td>precio</td>
-                <td>cantidad</td>
-                <td>total</td>
-                <td><a class="btn btn-warning"
-                       href="">Editar</a>
-                </td>
-                <td><a class="btn btn-danger"
-                       href="">Eliminar</a>
-                </td>
-            </tr>
+                <c:forEach var="factura" items="${FacturaD}">
+                    <tr>
+                        <td>${factura.getCodigoFactura()}</td>
+                        <td>${factura.getFechaFactura()}</td>
+                        <td>${cliente.getNombresCliente()} ${cliente.getApellidosCliente()}</td>
+                        <td>${producto.getNombreProducto()}</td>
+                        <td>${producto.getPrecioProducto()}</td>
+                        <td>${producto.getStock()}</td>
+                        <td>${detalleFactura.getCantidad()}</td>
+                        <td>total</td>
+                        <td><a class="btn btn-primary"
+                               href="">Editar</a>
+                        </td>
+                        <td><a class="btn btn-danger"
+                               href="">Eliminar</a>
+                        </td>
+                    </tr>
+                </c:forEach>                        
 
             </tbody>
         </table>
     </div>
-
-
+<script src="js/FacturaApp.js"></script>
 </div>
 
 

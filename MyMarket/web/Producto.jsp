@@ -45,7 +45,7 @@
                 </div>
             </div>
             <div class="cold col-sm-8">
-                <table class="table table-hover">
+                <table class="table table-dark">
                     <thead>
                         <tr>
                             <td>Codigo Producto:</td>
@@ -66,7 +66,7 @@
                             <td>${producto.getStock()}</td>
                             <td>${producto.getDescripcionProducto()}</td>
                             <td>${producto.getCodigoCategoria()}</td>
-                            <td><a class="btn btn-warning" href="Controlador?menu=Producto&accion=Editar&codigoProducto=${producto.getCodigoProducto()}">Editar</a></td>
+                            <td><a class="btn btn-primary" href="Controlador?menu=Producto&accion=Editar&codigoProducto=${producto.getCodigoProducto()}">Editar</a></td>
                             <td> <a class="btn btn-danger" href="Controlador?menu=Producto&accion=Eliminar&codigoProducto=${producto.getCodigoProducto()}">Eliminar</a></td>
                             
                         </tr>

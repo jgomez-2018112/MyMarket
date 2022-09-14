@@ -24,7 +24,7 @@
                         </div>
                         <div class="form-group">
                             <label>Fecha de Pedido:</label>
-                            <input type="text" value="${pedido.getFechaEntrada()}" name="txtFecha" class="form-control">
+                            <input type="date" value="${pedido.getFechaEntrada()}" name="txtFecha" class="form-control">
                         </div>
                          <div class="form-group">
                             <label>CodProducto:</label>
@@ -42,7 +42,7 @@
                 </div>
             </div>
             <div class="col-sm-8">
-                <table class="table table-hover">
+                <table class="table table-dark">
                     <thead>
                         <tr>
                             <td>CÓDIGO DE PEDIDO</td>
@@ -63,7 +63,7 @@
                                 
 
                                 <td>
-                                <a class="btn btn-warning" href="Controlador?menu=Pedido&accion=Editar&codigoPedido=${pedido.getCodigoPedido()}">Editar</a>
+                                <a class="btn btn-primary" href="Controlador?menu=Pedido&accion=Editar&codigoPedido=${pedido.getCodigoPedido()}">Editar</a>
                                 <a class="btn btn-danger" href="Controlador?menu=Pedido&accion=Eliminar&codigoPedido=${pedido.getCodigoPedido()}">Eliminar</a>
                             </td>
                             </tr>

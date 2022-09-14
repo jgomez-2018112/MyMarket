@@ -44,7 +44,7 @@
                 </div>
             </div>
             <div class="cold col-sm-8">
-                <table class="table table-hover">
+                <table class="table table-dark">
                     <thead>
                         <tr>
                             <td>DPI: </td>
@@ -64,7 +64,7 @@
                             <td>${cliente.getNitCliente()}</td>
                             <td>${cliente.getTelefonoCliente()}</td>
                             <td>
-                                <a class="btn btn-warning" href="Controlador?menu=Cliente&accion=Editar&dpiCliente=${cliente.getDpiCliente()}">Editar</a>
+                                <a class="btn btn-primary" href="Controlador?menu=Cliente&accion=Editar&dpiCliente=${cliente.getDpiCliente()}">Editar</a>
                                 <a class="btn btn-danger" href="Controlador?menu=Cliente&accion=Eliminar&dpiCliente=${cliente.getDpiCliente()}">Eliminar</a>
                             </td>
                         </tr>

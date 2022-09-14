@@ -33,7 +33,7 @@
                         </div>
                         <div class="form-group">
                             <label>Fecha nacimiento:</label>
-                            <input type="text" value="${empleados.getFechaNacimiento()}"  name="txtFechaNacimiento" class="form-control">
+                            <input type="date" value="${empleados.getFechaNacimiento()}"  name="txtFechaNacimiento" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Sexo:</label>
@@ -68,7 +68,7 @@
                 </div>
             </div>
             <div class="col-sm-8">
-                <table class="table table-hover">
+                <table class="table table-dark">
                     <thead>
                         <tr>
                             <td>CODIGO</td>
@@ -98,7 +98,7 @@
                                 <td>${empleado.getTelefonoEmpleado()}</td>
                                 <td>${empleado.getCodigoCargo()}</td>
 
-                                <td><a class="btn btn-warning" href="Controlador?menu=Empleado&accion=Editar&codigoEmpleado=${empleado.getCodigoEmpleado()}">Editar</a></td>
+                                <td><a class="btn btn-primary" href="Controlador?menu=Empleado&accion=Editar&codigoEmpleado=${empleado.getCodigoEmpleado()}">Editar</a></td>
                                 <td><a class="btn btn-danger" href="Controlador?menu=Empleado&accion=Eliminar&codigoEmpleado=${empleado.getCodigoEmpleado()}">Eliminar</a></td>
                             </tr>
                     </c:forEach>

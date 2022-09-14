@@ -33,7 +33,7 @@
                         </div>
                         <div class="form-group">
                             <label>Fecha nacimiento:</label>
-                            <input type="text" value="${empleados.getFechaNacimiento()}"  name="txtFechaNacimiento" class="form-control">
+                            <input type="date" value="${empleados.getFechaNacimiento()}"  name="txtFechaNacimiento" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Sexo:</label>

@@ -24,7 +24,7 @@
                         </div>
                         <div class="form-group">
                             <label>Fecha de Pedido:</label>
-                            <input type="text" value="${pedido.getFechaEntrada()}" name="txtFecha" class="form-control">
+                            <input type="date" value="${pedido.getFechaEntrada()}" name="txtFecha" class="form-control">
                         </div>
                          <div class="form-group">
                             <label>CodProducto:</label>

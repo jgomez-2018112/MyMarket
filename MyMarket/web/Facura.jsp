@@ -60,7 +60,7 @@
             </div>
 
             <div class="form-entradas fechas">
-                <input type="text" id="" class="form__input" autocomplete="off" placeholder="">
+                <input type="date" id="" class="form__input" autocomplete="off" placeholder="">
                 <label class="form__label">Fecha</label>
             </div>
         </div>

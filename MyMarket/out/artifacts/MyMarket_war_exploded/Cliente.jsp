@@ -1,6 +1,6 @@
 <%-- 
     Document   : Cliente
-    Created on : sep 02, 2022, 21:30:18 p.m.
+    Created on : sep 09, 2022, 17:30:18 p.m.
     Author     : Lic. edwar
 --%>
 
@@ -15,28 +15,28 @@
     </head>
     <body>
         <div class="d-flex">
-            <div class="card col-sm-4">
+            <div class="card col-sm-3">
                 <div class="card-body">
-                    <form class="" accion="Controlador?menu=Empleado" method="POST">
+                    <form class="" action="Controlador?menu=Cliente" method="POST">
                         <div class="form-group">
                             <label>DPI: </label>
-                            <input type="text" name="txtDPIEmpleado" class="form-control">
+                            <input type="text"  value="${cliente.getDpiCliente()}" name="txtDPICliente" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label>Nombres: </label>
-                            <input type="text" name="txtNombresEmpleado" class="form-control">
+                            <input type="text" value="${cliente.getNombresCliente()}" name="txtNombresCliente" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Apellidos:  </label>
-                            <input type="text" name="txtTelefono" class="form-control">
+                            <input type="text" value="${cliente.getApellidosCliente()}" name="txtApellidosCliente" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Nit: </label>
-                            <input type="text" name="txtEstado" class="form-control">
+                            <input type="text" value="${cliente.getNitCliente()}" name="txtNitCliente" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Teléfono: </label>
-                            <input type="text" name="txtUsuario" class="form-control">
+                            <input type="text" value="${cliente.getTelefonoCliente()}" name="txtTelefonoCliente" class="form-control">
                         </div>
                         <input type="submit" name="accion" value="Agregar" class="btn btn-info">
                         <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
@@ -64,8 +64,8 @@
                             <td>${cliente.getNitCliente()}</td>
                             <td>${cliente.getTelefonoCliente()}</td>
                             <td>
-                                <a class="btn btn-warning" href="">Editar</a>
-                                <a class="btn btn-danger" href="">Eliminar</a>
+                                <a class="btn btn-warning" href="Controlador?menu=Cliente&accion=Editar&dpiCliente=${cliente.getDpiCliente()}">Editar</a>
+                                <a class="btn btn-danger" href="Controlador?menu=Cliente&accion=Eliminar&dpiCliente=${cliente.getDpiCliente()}">Eliminar</a>
                             </td>
                         </tr>
                     </c:forEach>

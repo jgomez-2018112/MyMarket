@@ -1,6 +1,6 @@
 <%-- 
     Document   : Proveedor
-    Created on : 02-sep-2022, 18:59:02
+    Created on : 08-sep-2022, 22:04:48
     Author     : puchi
 --%>
 
@@ -8,7 +8,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
+<head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
@@ -21,15 +21,15 @@
                     <form action="Controlador?menu=Proveedor" method="POST">
                         <div class="form-gruop">
                             <label>Nombre del Proveedor: </label>
-                            <Input type="text" name="txtNombreProveedor" class="form-control">
+                            <Input type="text" value="${proveedor.getNombreProveedor()}" name="txtNombreProveedor" class="form-control">
                         </div>
                         <div class="form-gruop">
                             <label>Direccion del Proveedor: </label>
-                            <Input type="text" name="txtDireccion" class="form-control">
+                            <Input type="text" value="${proveedor.getDireccionProveedor()}" name="txtDireccion" class="form-control">
                         </div>
                         <div class="form-gruop">
                             <label>Telefono del Proveedor: </label>
-                            <Input type="text" name="txtTelefono" class="form-control">
+                            <Input type="text" value="${proveedor.getTelefonoProveedor()}" name="txtTelefono" class="form-control">
                         </div>
                         <input type="submit" name="accion" value="Agregar" class="btn btn-info">
                         <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
@@ -41,23 +41,23 @@
                     <thead>
                         <tr>
                             <td>CODIGO</td>
-                            <td>NOMBRE</td>
-                            <td>DIRECCION</td>
-                            <td>TELEFONO</td>
-                            <td>ACCIONES</td>
-
+                            <td>Nombre</td>
+                            <td>Direccion</td>
+                            <td>Telefono</td>
+                            <td>Acciones</td>
                         </tr> 
                     </thead>
                     <tbody>
-                        <c:forEach var="proveedor" items="${proveedor}">
+                        
+                        <c:forEach var="proveedor" items="${proveedores}">
                         <tr>
                             <td>${proveedor.getCodigoProveedor()}</td>
                             <td>${proveedor.getNombreProveedor()}</td>
                             <td>${proveedor.getDireccionProveedor()}</td>
                             <td>${proveedor.getTelefonoProveedor()}</td>
                             <td>
-                                <a class="btn btn-warning" href="">Editar</a>
-                                <a class="btn btn-danger" href="">Eliminar</a>
+                                <a class="btn btn-warning" href="Controlador?menu=Proveedor&accion=Editar&codigoProveedor=${proveedor.getCodigoProveedor()}">Editar</a>
+                                <a class="btn btn-danger" href="Controlador?menu=Proveedor&accion=Eliminar&codigoProveedor=${proveedor.getCodigoProveedor()}">Eliminar</a>
                             </td>
                         </tr>
                         </c:forEach>

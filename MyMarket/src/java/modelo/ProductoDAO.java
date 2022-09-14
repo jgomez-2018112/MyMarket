@@ -56,17 +56,18 @@ public class ProductoDAO {
     
   
     
-    public int actualizar(Producto pr){
-        String sql = "update productos set nombreProducto = ?, precioProducto = ?, stock = ?, descripcionProducto = ?, codigoCategoria = ? where codigoProducto = ?";
+    public int actualizar(Producto pro){
+        
+        String sql = "update Productos set nombreProducto = ?, precioProducto = ?, stock = ?, descripcionProducto = ?  where codigoProducto = ?";
         try{
             con = cn.Conexion();
             ps = con.prepareStatement(sql);
-            ps.setInt   (1, pr.getCodigoProducto());
-            ps.setString(2, pr.getNombreProducto());
-            ps.setDouble(3, pr.getPrecioProducto());
-            ps.setInt(4, pr.getStock());
-            ps.setString(5, pr.getDescripcionProducto());
-            ps.setInt(6, pr.getCodigoCategoria());
+            ps.setString(1, pro.getNombreProducto());
+            ps.setDouble(2, pro.getPrecioProducto());
+            ps.setInt(3, pro.getStock());
+            ps.setString(4, pro.getDescripcionProducto());
+            
+            ps.setInt   (5, pro.getCodigoProducto());
             ps.executeUpdate();
         }catch(Exception e){
             e.printStackTrace();

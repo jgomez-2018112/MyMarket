@@ -12,7 +12,8 @@
         <div class="d-flex">
             <div class="card col-sm-4">
                 <div class="card-body">
-                    <form class="" accion="Controlador?menu=Producto" method="POST">
+                    <form action="Controlador?menu=Producto" method="POST">
+                          
               
                         <div class="form-group">
                             <label>Nombre Producto: </label>
@@ -39,8 +40,10 @@
                                 </c:forEach> 
                             </select>
                         </div>
-                        <input type="submit" name="accion" value="Agregar" class="btn btn-info">
-                        <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
+                        <center>
+                            <input type="submit" name="accion" value="Agregar" class="btn btn-info" href="Controlador?menu=Producto&accion=Agregar">
+                            <input type="submit" name="accion" value="Actualizar" class="btn btn-success" href="Controlador?menu=Producto&accion=Actualizar">
+                        </center>
                     </form>
                 </div>
             </div>

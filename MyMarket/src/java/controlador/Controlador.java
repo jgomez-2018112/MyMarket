@@ -279,7 +279,7 @@ public class Controlador extends HttpServlet {
             }
             request.getRequestDispatcher("Cargo.jsp").forward(request, response);
            
-             } else if (menu.equalsIgnoreCase("Producto")) {
+             }  else if (menu.equalsIgnoreCase("Producto")) {
                  switch (accion){
                 case "Listar":
                     List listaProducto = productoDAO.listar();
@@ -293,7 +293,7 @@ public class Controlador extends HttpServlet {
                     Double precio = Double.parseDouble(request.getParameter("txtPrecio"));
                     int stock = Integer.parseInt(request.getParameter("txtStock"));
                     String desc = request.getParameter("txtDescripcion");
-                    int codCodigo = Integer.parseInt(request.getParameter("txtCodigoCategoria"));
+                    int codCategoria = Integer.parseInt(request.getParameter("txtCodigoCategoria"));
                     producto.setNombreProducto(nombres);
                     producto.setPrecioProducto(precio);
                     producto.setStock(stock);
@@ -309,22 +309,20 @@ public class Controlador extends HttpServlet {
                     request.getRequestDispatcher("Controlador?menu=Producto&accion=Listar").forward(request, response);
                     break;
                 case "Actualizar":
-                    int codigoProducto = Integer.parseInt(request.getParameter("txtCodigoProducto"));
-                    String nombreProduc = request.getParameter("txtNombreProducto");
+                    String nombrePro=request.getParameter("txtNombreProducto");
                     Double prc = Double.parseDouble(request.getParameter("txtPrecio"));
                     int st = Integer.parseInt(request.getParameter("txtStock"));
-                    String descProd = request.getParameter("txtDescripcionProducto");
-                    int codCat = Integer.parseInt(request.getParameter("txtCodigoCategoria"));
-                    producto.setCodigoProducto(codigoProducto);
-                    producto.setNombreProducto(nombreProduc);
+                    String descProd = request.getParameter("txtDescripcion");
+                    producto.setNombreProducto(nombrePro);
                     producto.setPrecioProducto(prc);
                     producto.setStock(st);
                     producto.setDescripcionProducto(descProd);
-                    producto.setCodigoCategoria(codCat);
-                    productoDAO.actualizar(producto);
+                    
+                    producto.setCodigoProducto(codProducto);
+                    productoDAO.actualizar(producto);                    
                     request.getRequestDispatcher("Controlador?menu=Producto&accion=Listar").forward(request, response);
                     break;
-                case "Eliminar":
+                 case "Eliminar":
                     codProducto = Integer.parseInt(request.getParameter("codigoProducto"));
                     productoDAO.eliminar(codProducto);
                     

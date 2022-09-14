@@ -127,7 +127,7 @@
                         </a>
                     </li>
                     <li class="list">
-                        <a href="Controlador?menu=Factura&accion=Listar" target="myFrame" class="nav-link">
+                        <a href="Facura.jsp" target="myFrame" class="nav-link">
                             <i class="bx icon"><img src="./img/bill.png" alt="" width="20px"></i>
                             <span class="link">Factura</span>
                         </a>

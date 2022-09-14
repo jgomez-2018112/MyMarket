@@ -421,13 +421,6 @@ public class Controlador extends HttpServlet {
             }
             request.getRequestDispatcher("Pedido.jsp").forward(request, response);
 
-        } else if (menu.equalsIgnoreCase("Factura")) {
-            switch (accion) {
-                case "Listar":
-                    request.getRequestDispatcher("Controlador?menu=Factura&accion=Listar").forward(request, response);
-                    break;
-            }
-            request.getRequestDispatcher("Factura.jsp").forward(request, response);
         }
 
     }

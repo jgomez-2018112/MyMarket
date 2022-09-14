@@ -72,14 +72,13 @@ public class PedidoDAO {
     }
      
      public int actualizar(Pedido ped){
-        String sql = "update pedidos set descripcionPedido=?, fechaEntrada=?, codigoProducto=?  where codigoPedido=?";
+        String sql = "update pedidos set descripcionPedido=?, fechaEntrada=?  where codigoPedido=?";
         try{
             con = cn.Conexion();
             ps = con.prepareStatement(sql);
             ps.setString(1, ped.getDescripcionPedido());
             ps.setString(2, ped.getFechaEntrada());
-            ps.setInt(3, ped.getCodigoProducto());
-            ps.setInt(4, ped.getCodigoPedido());
+            ps.setInt(3, ped.getCodigoPedido());
             ps.executeUpdate();
         }catch(Exception e){
             e.printStackTrace();
